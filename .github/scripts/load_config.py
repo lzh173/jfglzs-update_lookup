@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: gbk -*-
 import json
 import os
 
