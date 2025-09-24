@@ -19,16 +19,30 @@ env:
   URL_3: "http://www.jfglzs.com/software/jfgl2.zip"
 
 
+
 jobs:
   monitor-and-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    outputs:
+      release_tag: ${{ steps.tag.outputs.tag }}
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 获取所有历史记录，避免tag冲突
-        token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+        
+    - name: Generate unique tag
+      id: tag
+      run: |
+        # 使用GitHub运行ID和时间戳创建唯一tag
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        TAG="release-${TIMESTAMP}-${GITHUB_RUN_ID}"
+        echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "name=自动发布-${TIMESTAMP}" >> $GITHUB_OUTPUT
         
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -37,7 +51,6 @@ jobs:
         
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install requests
         
     - name: Download and compare content
@@ -45,25 +58,13 @@ jobs:
       run: |
         python .github/scripts/url_monitor.py
         
-    - name: Create Git Tag
-      if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
-      run: |
-        # 生成唯一的时间戳tag
-        TAG_NAME="release-$(date +%Y%m%d-%H%M%S)"
-        echo "Creating tag: $TAG_NAME"
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git tag -a "$TAG_NAME" -m "自动发布 - $(date +'%Y-%m-%d %H:%M:%S')"
-        git push origin "$TAG_NAME"
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
-        
     - name: Create Release
       if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
-      uses: softprops/action-gh-release@v1
+      uses: actions/create-release@v1
+      id: create_release
       with:
-        tag_name: release-$(date +%Y%m%d-%H%M%S)
-        name: "自动发布 - $(date +'%Y-%m-%d %H:%M:%S')"
+        tag_name: ${{ steps.tag.outputs.tag }}
+        release_name: ${{ steps.tag.outputs.name }}
         body: |
           检测到以下URL内容发生变化：
           
@@ -79,9 +80,8 @@ jobs:
           - ${{ env.URL_2 }}
           - ${{ env.URL_3 }}
           
-          自动生成于 $(date)
+          自动生成时间: ${{ steps.tag.outputs.name }}
         draft: false
         prerelease: false
-        generate_release_notes: true
       env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
