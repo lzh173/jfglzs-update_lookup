@@ -1,0 +1,63 @@
+name: URL Content Monitor and Release
+
+on:
+  schedule:
+    # 每小时运行一次
+    - cron: '0 * * * *'
+  workflow_dispatch: # 允许手动触发
+    inputs:
+      force_release:
+        description: '强制创建release（忽略内容变化）'
+        required: false
+        default: 'false'
+
+env:
+  # 设置要监控的三个URL
+  URL_1: "https://example.com/file1.txt"
+  URL_2: "https://example.com/file2.txt" 
+  URL_3: "https://example.com/file3.txt"
+
+jobs:
+  monitor-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        
+    - name: Download and compare content
+      id: monitor
+      run: |
+        python .github/scripts/url_monitor.py
+        
+    - name: Create Release
+      if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: release-$(date +%Y%m%d-%H%M%S)
+        name: "自动发布 - $(date +'%Y-%m-%d %H:%M:%S')"
+        body: |
+          检测到以下URL内容发生变化：
+          
+          ${{ steps.monitor.outputs.change_details }}
+          
+          变化详情：
+          - URL 1: ${{ steps.monitor.outputs.url1_status }}
+          - URL 2: ${{ steps.monitor.outputs.url2_status }}
+          - URL 3: ${{ steps.monitor.outputs.url3_status }}
+          
+          自动生成于 $(date)
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
