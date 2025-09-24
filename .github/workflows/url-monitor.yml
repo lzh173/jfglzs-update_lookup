@@ -80,7 +80,9 @@ jobs:
           ${{ steps.monitor.outputs.detailed_status }}
           
           ## 下载的文件
-          ${{ steps.download.outputs.downloaded_files_list }}
+          **文件列表:** ${{ steps.download.outputs.downloaded_files_list }}
+          
+          **文件名:** ${{ steps.download.outputs.downloaded_filenames }}
           
           ## 统计信息
           - 总监控URL数量: ${{ steps.config.outputs.total_urls }}

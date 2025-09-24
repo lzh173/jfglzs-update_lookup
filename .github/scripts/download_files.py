@@ -1,12 +1,15 @@
 ﻿#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import requests
-import os,re
+import os
 import json
 import hashlib
 from datetime import datetime
+import re
 
 def load_config():
-    """加载URL配置"""
+    """Load URL configuration"""
     config_file = '.github/scripts/urls_config.json'
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
@@ -15,7 +18,7 @@ def load_config():
         return {"urls": []}
 
 def get_url_info(url_id):
-    """根据URL ID获取URL信息"""
+    """Get URL info by ID"""
     config = load_config()
     for url_config in config['urls']:
         if url_config['id'] == url_id:
@@ -23,7 +26,7 @@ def get_url_info(url_id):
     return None
 
 def download_file(url_config, filename):
-    """下载文件到指定路径"""
+    """Download file to specified path"""
     try:
         url = url_config['url']
         timeout = url_config.get('timeout', 30)
@@ -31,11 +34,9 @@ def download_file(url_config, filename):
         response = requests.get(url, timeout=timeout)
         response.raise_for_status()
         
-        # 创建downloads目录
         os.makedirs('downloads', exist_ok=True)
         filepath = os.path.join('downloads', filename)
         
-        # 写入文件
         with open(filepath, 'wb') as f:
             f.write(response.content)
         
@@ -62,12 +63,11 @@ def download_file(url_config, filename):
         }
 
 def generate_filename(url_config):
-    """生成下载文件名"""
+    """Generate download filename"""
     url_id = url_config['id']
     url_name = url_config.get('name', url_id)
     original_url = url_config['url']
     
-    # 从URL提取文件名
     base_filename = os.path.basename(original_url) or f"{url_id}.bin"
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
@@ -75,67 +75,89 @@ def generate_filename(url_config):
     if not ext:
         ext = '.bin'
     
-    # 清理文件名中的特殊字符
     safe_name = re.sub(r'[^\w\-_.]', '_', name)
     filename = f"{safe_name}_{timestamp}{ext}"
     
     return filename
 
+def clean_output_text(text):
+    """Clean output text for GitHub Actions"""
+    # 移除换行符和可能引起问题的字符
+    cleaned = re.sub(r'[\n\r]', ' ', text)
+    cleaned = re.sub(r'[^\w\s\-\.:()]', '', cleaned)
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
+
 def main():
-    # 获取发生变化的URL
+    # Get changed URLs
     changed_urls_str = os.environ.get('CHANGED_URLS', '')
     changed_urls = [url.strip() for url in changed_urls_str.split(',') if url.strip()]
     
     if not changed_urls:
-        print("没有检测到变化的URL，跳过下载")
+        print("No changed URLs detected, skipping download")
         with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
-            fh.write('downloaded_files_list=没有文件需要下载\n')
+            fh.write('downloaded_files_list=No files to download\n')
             fh.write('total_downloaded=0\n')
         return
     
-    print(f"需要下载的URL: {changed_urls}")
+    print(f"URLs to download: {changed_urls}")
     
-    # 下载文件
+    # Download files
     download_results = []
     downloaded_files = []
     
     for url_id in changed_urls:
         url_config = get_url_info(url_id)
         if not url_config:
-            print(f"警告: 未找到URL配置: {url_id}")
+            print(f"Warning: URL config not found: {url_id}")
             continue
             
         filename = generate_filename(url_config)
         url_name = url_config.get('name', url_id)
         
-        print(f"下载 {url_name} ({url_id}): {url_config['url']} -> {filename}")
+        print(f"Downloading {url_name} ({url_id}): {url_config['url']} -> {filename}")
         
         result = download_file(url_config, filename)
         download_results.append(result)
         
         if result['success']:
             downloaded_files.append(result)
-            print(f"  下载成功: {filename} ({result['size']} 字节)")
+            print(f"  Success: {filename} ({result['size']} bytes)")
         else:
-            print(f"  下载失败: {result['error']}")
+            print(f"  Failed: {result['error']}")
     
-    # 生成下载文件列表
+    # Generate file list - 使用单行格式
     file_list = []
     for file_info in downloaded_files:
         size_kb = file_info['size'] / 1024
-        file_list.append(f"- {file_info['filename']} ({size_kb:.1f} KB) - {file_info['url_name']}")
+        if size_kb < 1024:
+            size_str = f"{size_kb:.1f} KB"
+        else:
+            size_mb = size_kb / 1024
+            size_str = f"{size_mb:.1f} MB"
+        
+        file_entry = f"{file_info['filename']} ({size_str}) - {file_info['url_name']}"
+        file_list.append(clean_output_text(file_entry))
     
-    # 设置GitHub Actions输出
+    # Set GitHub Actions outputs - 使用管道符分隔，避免换行
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
         if file_list:
-            files_output = "\n".join(file_list)
+            # 使用管道符分隔文件列表
+            files_output = " | ".join(file_list)
             fh.write(f'downloaded_files_list={files_output}\n')
+            
+            # 同时生成一个简化的版本用于显示
+            simple_list = []
+            for file_info in downloaded_files:
+                simple_list.append(file_info['filename'])
+            fh.write(f'downloaded_filenames={", ".join(simple_list)}\n')
         else:
-            fh.write('downloaded_files_list=没有文件被下载\n')
+            fh.write('downloaded_files_list=No files downloaded\n')
+            fh.write('downloaded_filenames=\n')
         
         fh.write(f'total_downloaded={len(downloaded_files)}\n')
     
-    # 保存下载记录
+    # Save download history
     os.makedirs('.github/scripts', exist_ok=True)
     with open('.github/scripts/download_history.json', 'a') as f:
         record = {
@@ -145,7 +167,7 @@ def main():
         }
         f.write(json.dumps(record, ensure_ascii=False) + '\n')
     
-    print(f"下载完成: {len(downloaded_files)} 个文件")
+    print(f"Download completed: {len(downloaded_files)} files")
 
 if __name__ == "__main__":
     main()
