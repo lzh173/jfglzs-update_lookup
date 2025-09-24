@@ -1,40 +1,41 @@
 #!/usr/bin/env python3
-# -*- coding: gbk -*-
+# -*- coding: utf-8 -*-
+
 import json
 import os
 
 def load_config():
-    """¼ÓÔØURLÅäÖÃÎÄ¼ş"""
+    """åŠ è½½URLé…ç½®æ–‡ä»¶"""
     config_file = '.github/scripts/urls_config.json'
     
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
             config = json.load(f)
         
-        # ¹ıÂËÆôÓÃµÄURL
+        # è¿‡æ»¤å¯ç”¨çš„URL
         enabled_urls = [url for url in config['urls'] if url.get('enabled', True)]
         all_urls = config['urls']
         
-        # ÉèÖÃ»·¾³±äÁ¿¹©ÆäËû½Å±¾Ê¹ÓÃ
+        # è®¾ç½®ç¯å¢ƒå˜é‡ä¾›å…¶ä»–è„šæœ¬ä½¿ç”¨
         with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
             fh.write(f'total_urls={len(all_urls)}\n')
             fh.write(f'enabled_urls={len(enabled_urls)}\n')
             fh.write(f'config_file={config_file}\n')
         
-        print(f"ÅäÖÃÎÄ¼ş¼ÓÔØ³É¹¦: {config_file}")
-        print(f"×ÜURLÊıÁ¿: {len(all_urls)}")
-        print(f"ÆôÓÃURLÊıÁ¿: {len(enabled_urls)}")
+        print(f"Config file loaded successfully: {config_file}")
+        print(f"Total URLs: {len(all_urls)}")
+        print(f"Enabled URLs: {len(enabled_urls)}")
         
         return config
         
     except Exception as e:
-        print(f"¼ÓÔØÅäÖÃÎÄ¼şÊ§°Ü: {e}")
-        # ·µ»ØÄ¬ÈÏÅäÖÃ
+        print(f"Failed to load config file: {e}")
+        # è¿”å›é»˜è®¤é…ç½®
         default_config = {
             "urls": [
                 {
                     "id": "default_url",
-                    "name": "Ä¬ÈÏURL",
+                    "name": "Default URL",
                     "url": "https://example.com/default.txt",
                     "enabled": True
                 }
