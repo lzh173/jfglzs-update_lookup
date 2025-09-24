@@ -2,25 +2,25 @@
   "urls": [
     {
       "id": "url1",
-      "name": "ÆÁ±ÎÍøÖ·ÁĞ±í",
+      "name": "å±è”½ç½‘å€åˆ—è¡¨",
       "url": "http://www.zmyxl2016.com/urls.txt",
       "enabled": true
     },
     {
       "id": "url2",
-      "name": "ÆÁ±Î³ÌĞòÌØÕ÷±í",
+      "name": "å±è”½ç¨‹åºç‰¹å¾è¡¨",
       "url": "http://www.zmyxl2008.com/cpm.txt",
       "enabled": true
     },
     {
       "id": "url3",
-      "name": "ÖúÊÖ°²×°ÎÄ¼ş",
+      "name": "åŠ©æ‰‹å®‰è£…æ–‡ä»¶",
       "url": "http://www.jfglzs.com/software/jfgl2.zip",
       "enabled": true
     },
     {
       "id": "url4",
-      "name": "ÖúÊÖ·¢²¼Ò³",
+      "name": "åŠ©æ‰‹å‘å¸ƒé¡µ",
       "url": "https://www.jfglzs.com/c1.html",
       "enabled": true
     }
