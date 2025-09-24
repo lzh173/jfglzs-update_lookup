@@ -5,18 +5,18 @@ import json
 import os
 
 def load_config():
-    """加载URL配置文件"""
+    """����URL�����ļ�"""
     config_file = '.github/scripts/urls_config.json'
     
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
             config = json.load(f)
         
-        # 过滤启用的URL
+        # �������õ�URL
         enabled_urls = [url for url in config['urls'] if url.get('enabled', True)]
         all_urls = config['urls']
         
-        # 设置环境变量供其他脚本使用
+        # ���û��������������ű�ʹ��
         with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
             fh.write(f'total_urls={len(all_urls)}\n')
             fh.write(f'enabled_urls={len(enabled_urls)}\n')
@@ -30,7 +30,7 @@ def load_config():
         
     except Exception as e:
         print(f"Failed to load config file: {e}")
-        # 返回默认配置
+        # ����Ĭ������
         default_config = {
             "urls": [
                 {
