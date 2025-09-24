@@ -2,14 +2,17 @@ name: URL Content Monitor and Release
 
 on:
   schedule:
-    # 每小时运行一次
     - cron: '0 * * * *'
   workflow_dispatch:
     inputs:
       force_release:
-        description: '强制创建release（忽略内容变化）'
+        description: '强制创建release'
         required: false
         default: 'false'
+
+
+
+
 
 
 env:
@@ -26,23 +29,11 @@ jobs:
     permissions:
       contents: write
     
-    outputs:
-      release_tag: ${{ steps.tag.outputs.tag }}
-    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        
-    - name: Generate unique tag
-      id: tag
-      run: |
-        # 使用GitHub运行ID和时间戳创建唯一tag
-        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-        TAG="release-${TIMESTAMP}-${GITHUB_RUN_ID}"
-        echo "tag=${TAG}" >> $GITHUB_OUTPUT
-        echo "name=自动发布-${TIMESTAMP}" >> $GITHUB_OUTPUT
         
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -53,15 +44,29 @@ jobs:
       run: |
         pip install requests
         
+    - name: Generate unique tag
+      id: tag
+      run: |
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        TAG="release-${TIMESTAMP}-${GITHUB_RUN_ID}"
+        echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "name=自动发布-${TIMESTAMP}" >> $GITHUB_OUTPUT
+        echo "timestamp=${TIMESTAMP}" >> $GITHUB_OUTPUT
+        
     - name: Download and compare content
       id: monitor
       run: |
         python .github/scripts/url_monitor.py
         
+    - name: Download changed files
+      if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
+      id: download
+      run: |
+        python .github/scripts/download_files.py
+        
     - name: Create Release
       if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
-      uses: actions/create-release@v1
-      id: create_release
+      uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ steps.tag.outputs.tag }}
         release_name: ${{ steps.tag.outputs.name }}
@@ -75,13 +80,18 @@ jobs:
           - URL 2: ${{ steps.monitor.outputs.url2_status }}
           - URL 3: ${{ steps.monitor.outputs.url3_status }}
           
+          下载的文件：
+          ${{ steps.download.outputs.downloaded_files }}
+          
           监控的URL：
           - ${{ env.URL_1 }}
           - ${{ env.URL_2 }}
           - ${{ env.URL_3 }}
           
-          自动生成时间: ${{ steps.tag.outputs.name }}
+          自动生成时间: ${{ steps.tag.outputs.timestamp }}
         draft: false
         prerelease: false
+        files: |
+          downloads/*
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

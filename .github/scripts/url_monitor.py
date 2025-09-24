@@ -6,6 +6,19 @@ import json
 from datetime import datetime
 import sys
 
+def save_change_details(changed_urls):
+    """保存变化详情供下载脚本使用"""
+    change_file = '.github/scripts/changed_urls.json'
+    os.makedirs(os.path.dirname(change_file), exist_ok=True)
+    
+    with open(change_file, 'w') as f:
+        json.dump({
+            'timestamp': datetime.now().isoformat(),
+            'changed_urls': changed_urls,
+            'run_id': os.environ.get('GITHUB_RUN_ID', 'unknown')
+        }, f, indent=2)
+
+
 def get_content_hash(url):
     """获取URL内容的哈希值"""
     try:
@@ -54,6 +67,9 @@ def main():
     
     has_changes = False
     
+    changed_urls = []
+    has_changes = False
+    
     for url_id, url in urls.items():
         print(f"检查 {url_id}: {url}")
         
@@ -72,11 +88,13 @@ def main():
         elif url_id not in previous_hashes:
             status_msg = "首次检查"
             changes.append(f"✅ {url_id} 首次检查")
+            changed_urls.append(url_id)
             has_changes = True
         elif previous_hashes[url_id].get('hash') != current_hash:
             old_size = previous_hashes[url_id].get('size', 0)
             status_msg = f"内容变化: {old_size} → {size} 字节"
             changes.append(f"🔄 {url_id} 内容已变化 ({old_size} → {size} 字节)")
+            changed_urls.append(url_id)
             has_changes = True
         else:
             status_msg = "无变化"
@@ -88,17 +106,24 @@ def main():
     # 保存当前哈希值
     save_current_hashes(current_hashes)
     
+    # 保存变化详情
+    if has_changes:
+        save_change_details(changed_urls)
+    
     # 设置GitHub Actions输出
-    print(f"::set-output name=changed::{str(has_changes).lower()}")
-    print(f"::set-output name=change_details::{chr(10).join(changes)}")
-    print(f"::set-output name=url1_status::{status_messages[0] if len(status_messages) > 0 else 'N/A'}")
-    print(f"::set-output name=url2_status::{status_messages[1] if len(status_messages) > 1 else 'N/A'}")
-    print(f"::set-output name=url3_status::{status_messages[2] if len(status_messages) > 2 else 'N/A'}")
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        fh.write(f'changed={str(has_changes).lower()}\n')
+        fh.write(f'change_details={chr(10).join(changes)}\n')
+        fh.write(f'url1_status={status_messages[0] if len(status_messages) > 0 else "N/A"}\n')
+        fh.write(f'url2_status={status_messages[1] if len(status_messages) > 1 else "N/A"}\n')
+        fh.write(f'url3_status={status_messages[2] if len(status_messages) > 2 else "N/A"}\n')
+        fh.write(f'changed_urls={",".join(changed_urls)}\n')
     
     if has_changes:
-        print("检测到内容变化，将创建release")
+        print(f"检测到内容变化，将下载文件: {changed_urls}")
     else:
         print("未检测到内容变化")
+        
 
 if __name__ == "__main__":
     main()
