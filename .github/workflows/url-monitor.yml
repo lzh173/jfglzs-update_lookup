@@ -13,9 +13,9 @@ on:
 
 env:
   # 设置要监控的三个URL
-  URL_1: "https://example.com/file1.txt"
-  URL_2: "https://example.com/file2.txt" 
-  URL_3: "https://example.com/file3.txt"
+  URL_1: "http://www.zmyxl2016.com/urls.txt"
+  URL_2: "http://www.zmyxl2008.com/cpm.txt" 
+  URL_3: "http://www.jfglzs.com/software/jfgl2.zip"
 
 jobs:
   monitor-and-release:
