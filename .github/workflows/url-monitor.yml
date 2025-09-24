@@ -2,26 +2,17 @@ name: URL Content Monitor and Release
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # 每小时运行一次
   workflow_dispatch:
     inputs:
       force_release:
         description: '强制创建release'
         required: false
         default: 'false'
-
-
-
-
-
-
-env:
-  # 设置要监控的三个URL
-  URL_1: "http://www.zmyxl2016.com/urls.txt"
-  URL_2: "http://www.zmyxl2008.com/cpm.txt" 
-  URL_3: "http://www.jfglzs.com/software/jfgl2.zip"
-
-
+      check_all_urls:
+        description: '检查所有URL（包括禁用的）'
+        required: false
+        default: 'false'
 
 jobs:
   monitor-and-release:
@@ -53,14 +44,23 @@ jobs:
         echo "name=自动发布-${TIMESTAMP}" >> $GITHUB_OUTPUT
         echo "timestamp=${TIMESTAMP}" >> $GITHUB_OUTPUT
         
+    - name: Load URL configuration
+      id: config
+      run: |
+        python .github/scripts/load_config.py
+        
     - name: Download and compare content
       id: monitor
+      env:
+        CHECK_ALL_URLS: ${{ github.event.inputs.check_all_urls }}
       run: |
         python .github/scripts/url_monitor.py
         
     - name: Download changed files
       if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
       id: download
+      env:
+        CHANGED_URLS: ${{ steps.monitor.outputs.changed_urls }}
       run: |
         python .github/scripts/download_files.py
         
@@ -71,22 +71,22 @@ jobs:
         tag_name: ${{ steps.tag.outputs.tag }}
         release_name: ${{ steps.tag.outputs.name }}
         body: |
-          检测到以下URL内容发生变化：
+          # 自动发布报告
           
+          ## 变化摘要
           ${{ steps.monitor.outputs.change_details }}
           
-          变化详情：
-          - URL 1: ${{ steps.monitor.outputs.url1_status }}
-          - URL 2: ${{ steps.monitor.outputs.url2_status }}
-          - URL 3: ${{ steps.monitor.outputs.url3_status }}
+          ## 监控详情
+          ${{ steps.monitor.outputs.detailed_status }}
           
-          下载的文件：
-          ${{ steps.download.outputs.downloaded_files }}
+          ## 下载的文件
+          ${{ steps.download.outputs.downloaded_files_list }}
           
-          监控的URL：
-          - ${{ env.URL_1 }}
-          - ${{ env.URL_2 }}
-          - ${{ env.URL_3 }}
+          ## 统计信息
+          - 总监控URL数量: ${{ steps.config.outputs.total_urls }}
+          - 启用URL数量: ${{ steps.config.outputs.enabled_urls }}
+          - 发生变化URL数量: ${{ steps.monitor.outputs.changed_count }}
+          - 下载文件数量: ${{ steps.download.outputs.total_downloaded }}
           
           自动生成时间: ${{ steps.tag.outputs.timestamp }}
         draft: false
