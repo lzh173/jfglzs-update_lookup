@@ -4,18 +4,20 @@ on:
   schedule:
     # 每小时运行一次
     - cron: '0 * * * *'
-  workflow_dispatch: # 允许手动触发
+  workflow_dispatch:
     inputs:
       force_release:
         description: '强制创建release（忽略内容变化）'
         required: false
         default: 'false'
 
+
 env:
   # 设置要监控的三个URL
   URL_1: "http://www.zmyxl2016.com/urls.txt"
   URL_2: "http://www.zmyxl2008.com/cpm.txt" 
   URL_3: "http://www.jfglzs.com/software/jfgl2.zip"
+
 
 jobs:
   monitor-and-release:
@@ -24,7 +26,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
+      with:
+        fetch-depth: 0  # 获取所有历史记录，避免tag冲突
+        token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+        
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -39,6 +44,19 @@ jobs:
       id: monitor
       run: |
         python .github/scripts/url_monitor.py
+        
+    - name: Create Git Tag
+      if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
+      run: |
+        # 生成唯一的时间戳tag
+        TAG_NAME="release-$(date +%Y%m%d-%H%M%S)"
+        echo "Creating tag: $TAG_NAME"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag -a "$TAG_NAME" -m "自动发布 - $(date +'%Y-%m-%d %H:%M:%S')"
+        git push origin "$TAG_NAME"
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
         
     - name: Create Release
       if: steps.monitor.outputs.changed == 'true' || github.event.inputs.force_release == 'true'
@@ -56,8 +74,14 @@ jobs:
           - URL 2: ${{ steps.monitor.outputs.url2_status }}
           - URL 3: ${{ steps.monitor.outputs.url3_status }}
           
+          监控的URL：
+          - ${{ env.URL_1 }}
+          - ${{ env.URL_2 }}
+          - ${{ env.URL_3 }}
+          
           自动生成于 $(date)
         draft: false
         prerelease: false
+        generate_release_notes: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
