@@ -1,6 +1,6 @@
 ﻿#!/usr/bin/env python3
 import requests
-import os
+import os,re
 import json
 import hashlib
 from datetime import datetime
