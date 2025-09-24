@@ -70,24 +70,23 @@ def get_url_mapping():
 def load_changed_urls():
     """加载发生变化的URL信息"""
     try:
-        # 从monitor步骤的输出文件读取变化信息
-        with open(os.environ.get('GITHUB_OUTPUT', ''), 'r') as f:
-            lines = f.readlines()
+        # 方法1：从changed_urls输出参数读取
+        changed_urls_str = os.environ.get('CHANGED_URLS', '')
+        if changed_urls_str:
+            return [url.strip() for url in changed_urls_str.split(',') if url.strip()]
         
-        changed_urls = []
-        for line in lines:
-            if line.startswith('change_details='):
-                # 解析变化详情
-                details = line.split('=', 1)[1].strip()
-                if '变化' in details or '首次检查' in details:
-                    # 提取URL ID
-                    for url_id in ['url1', 'url2', 'url3']:
-                        if url_id in details:
-                            changed_urls.append(url_id)
-                break
-        return changed_urls
-    except:
-        # 如果无法读取，默认下载所有URL
+        # 方法2：从文件读取
+        change_file = '.github/scripts/changed_urls.json'
+        if os.path.exists(change_file):
+            with open(change_file, 'r') as f:
+                data = json.load(f)
+                return data.get('changed_urls', [])
+        
+        # 方法3：如果都失败，下载所有URL
+        return ['url1', 'url2', 'url3']
+        
+    except Exception as e:
+        print(f"读取变化URL失败: {e}")
         return ['url1', 'url2', 'url3']
 
 def main():
@@ -117,20 +116,22 @@ def main():
                     'size': result['size'],
                     'url_id': url_id
                 })
-                print(f"  ✓ 下载成功: {result['filename']} ({result['size']} 字节)")
+                print(f"  下载成功: {result['filename']} ({result['size']} 字节)")
             else:
-                print(f"  ✗ 下载失败: {result['error']}")
+                print(f"  下载失败: {result['error']}")
     
     # 生成下载文件列表
     file_list = []
     for file_info in downloaded_files:
         size_kb = file_info['size'] / 1024
-        file_list.append(f"- {file_info['filename']} ({size_kb:.1f} KB) - {file_info['url_id']}")
+        file_list.append(f"{file_info['filename']} ({size_kb:.1f} KB) - {file_info['url_id']}")
     
     # 设置GitHub Actions输出
     with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
         if file_list:
-            fh.write(f'downloaded_files={chr(10).join(file_list)}\n')
+            # 使用简单的分隔符
+            files_output = " | ".join(file_list)
+            fh.write(f'downloaded_files={files_output}\n')
         else:
             fh.write('downloaded_files=没有文件被下载\n')
         
