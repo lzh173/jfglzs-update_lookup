@@ -4,7 +4,7 @@
     "size": 256,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-09-27T04:16:46.262956",
+    "timestamp": "2025-09-27T05:13:11.737403",
     "success": true
   },
   "url2": {
@@ -12,23 +12,23 @@
     "size": 29,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-09-27T04:16:51.965549",
+    "timestamp": "2025-09-27T05:13:17.449990",
     "success": true
   },
   "url3": {
-    "hash": "error: 404 Client Error: Not Found for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/jfgl2.zip",
-    "size": 0,
+    "hash": "b95c1fe3d6eb2875ea8b0aa39292198e",
+    "size": 26888994,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-09-27T04:16:56.887255",
-    "success": false
+    "timestamp": "2025-09-27T05:13:55.038042",
+    "success": true
   },
   "url4": {
-    "hash": "error: 404 Client Error: Not Found for url: https://www.jfglzs.com/c1.html",
-    "size": 0,
+    "hash": "c70720cd7afdff30478ad66db6d91613",
+    "size": 12378,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-09-27T04:16:57.898590",
-    "success": false
+    "timestamp": "2025-09-27T05:13:56.154122",
+    "success": true
   }
 }
