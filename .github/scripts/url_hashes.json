@@ -4,7 +4,7 @@
     "size": 285,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-10-02T05:13:24.942070",
+    "timestamp": "2025-10-02T06:21:06.025223",
     "success": true
   },
   "url2": {
@@ -12,23 +12,23 @@
     "size": 40,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-10-02T05:13:31.357087",
+    "timestamp": "2025-10-02T06:21:07.497661",
     "success": true
   },
   "url3": {
-    "hash": "8b2be9183c3b370c3065253d190d1841",
-    "size": 26937910,
+    "hash": "error: ('Connection broken: IncompleteRead(22020096 bytes read, 4917814 more expected)', IncompleteRead(22020096 bytes read, 4917814 more expected))",
+    "size": 0,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-10-02T05:14:24.788223",
-    "success": true
+    "timestamp": "2025-10-02T06:22:40.834360",
+    "success": false
   },
   "url4": {
     "hash": "24cecac68d32189af42799a8c3f45bd3",
     "size": 12382,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-10-02T05:14:25.817655",
+    "timestamp": "2025-10-02T06:22:41.803525",
     "success": true
   }
 }
