@@ -23,18 +23,13 @@
       "name": "助手发布页",
       "url": "https://www.jfglzs.com/c1.html",
       "enabled": true
-    },
-    {
-      "id": "url5",
-      "name": "11月业余无线电考试页面",
-      "url": "http://ragd.org.cn/kstz",
-      "enabled": true
     }
+
   ],
   "settings": {
     "check_interval_hours": 1,
     "max_file_size_mb": 50,
     "timeout_seconds": 30,
-    "user_agent": "GitHub-URL-Monitor/1.0"
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.199 Safari/537.36"
   }
 }
