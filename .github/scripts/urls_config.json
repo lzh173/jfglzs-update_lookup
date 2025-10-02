@@ -24,6 +24,12 @@
       "url": "https://www.jfglzs.com/c1.html",
       "enabled": true
     }
+        {
+      "id": "url5",
+      "name": "11月业余无线电考试页面",
+      "url": "http://ragd.org.cn/kstz",
+      "enabled": true
+    }
   ],
   "settings": {
     "check_interval_hours": 1,
