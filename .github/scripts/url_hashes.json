@@ -4,23 +4,23 @@
     "size": 308,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-10-13T23:13:23.948266",
+    "timestamp": "2025-10-14T01:10:19.823805",
     "success": true
   },
   "url2": {
-    "hash": "f0d645128f0d489abe0d57e7014b7fe6",
-    "size": 88,
+    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /cpm.txt (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x7fd3bc76e5d0>: Failed to resolve 'www.zmyxl2008.com' ([Errno -3] Temporary failure in name resolution)\"))",
+    "size": 0,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-10-13T23:13:25.603205",
-    "success": true
+    "timestamp": "2025-10-14T01:10:29.845818",
+    "success": false
   },
   "url3": {
     "hash": "470816059fc7999b779e0464705e2971",
     "size": 26940435,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-10-13T23:13:33.328873",
+    "timestamp": "2025-10-14T01:10:48.547838",
     "success": true
   },
   "url4": {
@@ -28,7 +28,7 @@
     "size": 12491,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-10-13T23:13:34.397521",
+    "timestamp": "2025-10-14T01:10:49.613305",
     "success": true
   }
 }
