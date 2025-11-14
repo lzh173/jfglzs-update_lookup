@@ -4,7 +4,7 @@
     "size": 3957,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-11-14T07:15:52.445596",
+    "timestamp": "2025-11-14T08:21:35.542090",
     "success": true
   },
   "url2": {
@@ -12,23 +12,23 @@
     "size": 116,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-11-14T07:15:57.781994",
+    "timestamp": "2025-11-14T08:21:40.936996",
     "success": true
   },
   "url3": {
-    "hash": "852c0aa3431a138e3c3abfb31f7383f1",
-    "size": 26934733,
+    "hash": "cd1c5a6a051fc26b64b0a1a4ea72a84c",
+    "size": 26532620,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-11-14T07:16:48.059848",
+    "timestamp": "2025-11-14T08:22:22.819718",
     "success": true
   },
   "url4": {
-    "hash": "5f7bbf22a6b8bd2a2ed8b48c7fab27b1",
-    "size": 12528,
+    "hash": "7a18ab0288c4efc2982ab1d34b9f61c3",
+    "size": 12668,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-11-14T07:16:49.108533",
+    "timestamp": "2025-11-14T08:22:24.175588",
     "success": true
   }
 }
