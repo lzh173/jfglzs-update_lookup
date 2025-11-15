@@ -1,34 +1,34 @@
 {
   "url1": {
-    "hash": "5e1d3b4a55e7e8fd3c99a5da5f95de7d",
-    "size": 3957,
+    "hash": "9cc0808342b7fbdf1d756fe3890148f6",
+    "size": 1410,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-11-15T04:18:29.296212",
+    "timestamp": "2025-11-15T15:14:22.999545",
     "success": true
   },
   "url2": {
-    "hash": "1eeeb36b9199ae5aa3fa983c75f47455",
-    "size": 116,
-    "url": "http://www.zmyxl2008.com/cpm.txt",
-    "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-11-15T04:18:30.897471",
+    "hash": "bd1d2f7385e5de389dcdaf02bb2a311c",
+    "size": 152,
+    "url": "http://www.zmyxl2008.com/hmd_net.txt",
+    "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
+    "timestamp": "2025-11-15T15:14:31.631536",
     "success": true
   },
   "url3": {
-    "hash": "3b8a0c1fdd727fff79e469a40e10764b",
-    "size": 26532647,
+    "hash": "error: 404 Client Error: Not Found for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/jfgl2.zip",
+    "size": 0,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-11-15T04:18:42.695698",
-    "success": true
+    "timestamp": "2025-11-15T15:14:41.700403",
+    "success": false
   },
   "url4": {
     "hash": "7a18ab0288c4efc2982ab1d34b9f61c3",
     "size": 12668,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-11-15T04:18:43.692743",
+    "timestamp": "2025-11-15T15:14:42.758427",
     "success": true
   }
 }
