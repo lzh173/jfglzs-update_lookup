@@ -4,7 +4,7 @@
     "size": 1410,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-11-15T07:14:01.165195",
+    "timestamp": "2025-11-15T08:18:52.670308",
     "success": true
   },
   "url2": {
@@ -12,15 +12,15 @@
     "size": 152,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2025-11-15T07:14:07.270538",
+    "timestamp": "2025-11-15T08:18:59.174219",
     "success": true
   },
   "url3": {
-    "hash": "error: 404 Client Error: Not Found for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/jfgl2.zip",
+    "hash": "error: HTTPConnectionPool(host='www.jfglzs.com', port=80): Max retries exceeded with url: /software/jfgl2.zip (Caused by NameResolutionError(\"<urllib3.connection.HTTPConnection object at 0x7efeb3045ba0>: Failed to resolve 'www.jfglzs.com' ([Errno -3] Temporary failure in name resolution)\"))",
     "size": 0,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-11-15T07:14:14.881618",
+    "timestamp": "2025-11-15T08:19:09.212655",
     "success": false
   },
   "url4": {
@@ -28,7 +28,7 @@
     "size": 12668,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-11-15T07:14:15.470677",
+    "timestamp": "2025-11-15T08:19:10.869459",
     "success": true
   }
 }
