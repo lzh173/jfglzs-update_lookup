@@ -13,19 +13,19 @@
       "enabled": true
     },
     {
-      "id": "url2",
+      "id": "url3",
       "name": "12.0云控下发",
       "url": "http://www.zmyxl2008.com/hmd_net.txt",
       "enabled": true
     },
     {
-      "id": "url3",
+      "id": "url4",
       "name": "助手安装文件",
       "url": "http://www.jfglzs.com/software/jfgl2.zip",
       "enabled": true
     },
     {
-      "id": "url4",
+      "id": "url5",
       "name": "助手发布页",
       "url": "https://www.jfglzs.com/c1.html",
       "enabled": true
