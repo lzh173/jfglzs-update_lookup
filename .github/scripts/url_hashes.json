@@ -4,7 +4,7 @@
     "size": 1392,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-11-24T11:15:01.563986",
+    "timestamp": "2025-11-24T12:34:42.494526",
     "success": true
   },
   "url2": {
@@ -12,23 +12,23 @@
     "size": 116,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-11-24T11:15:11.628326",
+    "timestamp": "2025-11-24T12:34:44.173675",
     "success": true
   },
   "url3": {
-    "hash": "5bb00ac3c03aa06d0f95e3a11c9230ef",
-    "size": 142,
+    "hash": "49ae1a8273264595b9d2c7d259d5019c",
+    "size": 129,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2025-11-24T11:15:12.436635",
+    "timestamp": "2025-11-24T12:34:44.973853",
     "success": true
   },
   "url4": {
-    "hash": "error: HTTPSConnectionPool(host='www-x-jfglzs-x-com.img.addlink.cn', port=443): Read timed out. (read timeout=30)",
+    "hash": "error: 404 Client Error: Not Found for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/jfgl2.zip",
     "size": 0,
     "url": "http://www.jfglzs.com/software/jfgl2.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-11-24T11:15:45.821867",
+    "timestamp": "2025-11-24T12:34:52.296822",
     "success": false
   },
   "url5": {
@@ -36,7 +36,7 @@
     "size": 12815,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-11-24T11:15:51.881766",
+    "timestamp": "2025-11-24T12:34:53.344778",
     "success": true
   }
 }
