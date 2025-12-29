@@ -1,34 +1,34 @@
 {
   "url1": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2016.com', port=80): Max retries exceeded with url: /urls.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2016.com', port=80) at 0x7f099fed2f90>, 'Connection to www.zmyxl2016.com timed out. (connect timeout=30)'))",
-    "size": 0,
+    "hash": "a50973555500e06367511f551d4f3cde",
+    "size": 1406,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2025-12-29T22:16:57.033603",
-    "success": false
+    "timestamp": "2025-12-29T23:16:13.772054",
+    "success": true
   },
   "url2": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /cpm.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7f099ff82850>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
-    "size": 0,
+    "hash": "1eeeb36b9199ae5aa3fa983c75f47455",
+    "size": 116,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2025-12-29T22:17:27.992423",
-    "success": false
+    "timestamp": "2025-12-29T23:16:15.049781",
+    "success": true
   },
   "url3": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /hmd_net.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7f099ff83110>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
-    "size": 0,
+    "hash": "4b502c9db5b172696b272c1a23d295cb",
+    "size": 143,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2025-12-29T22:17:58.215723",
-    "success": false
+    "timestamp": "2025-12-29T23:16:15.655425",
+    "success": true
   },
   "url4": {
     "hash": "b76a1904a016ca7c3b0591c030d8d184",
     "size": 25413552,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2025-12-29T22:18:24.001861",
+    "timestamp": "2025-12-29T23:16:22.418316",
     "success": true
   },
   "url5": {
@@ -36,7 +36,7 @@
     "size": 12920,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2025-12-29T22:18:24.785408",
+    "timestamp": "2025-12-29T23:16:23.006825",
     "success": true
   }
 }
