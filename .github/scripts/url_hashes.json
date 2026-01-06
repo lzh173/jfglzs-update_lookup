@@ -4,7 +4,7 @@
     "size": 1392,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-01-06T17:20:22.125793",
+    "timestamp": "2026-01-06T18:26:22.778286",
     "success": true
   },
   "url2": {
@@ -12,7 +12,7 @@
     "size": 86,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-01-06T17:20:23.783204",
+    "timestamp": "2026-01-06T18:26:26.106384",
     "success": true
   },
   "url3": {
@@ -20,23 +20,23 @@
     "size": 166,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-01-06T17:20:24.537502",
+    "timestamp": "2026-01-06T18:26:26.715890",
     "success": true
   },
   "url4": {
-    "hash": "error: ('Connection broken: IncompleteRead(11927552 bytes read, 13485444 more expected)', IncompleteRead(11927552 bytes read, 13485444 more expected))",
-    "size": 0,
+    "hash": "3215c602525c2eca26fc6e2b315c526c",
+    "size": 25412996,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-01-06T17:21:40.034080",
-    "success": false
+    "timestamp": "2026-01-06T18:26:54.975330",
+    "success": true
   },
   "url5": {
     "hash": "3c8d845ce39ea7bf72025856ef46a292",
     "size": 12920,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-01-06T17:21:41.073685",
+    "timestamp": "2026-01-06T18:26:55.775642",
     "success": true
   }
 }
