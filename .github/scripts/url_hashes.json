@@ -1,42 +1,42 @@
 {
   "url1": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2016.com/urls.txt",
+    "hash": "error: HTTPConnectionPool(host='www.zmyxl2016.com', port=80): Max retries exceeded with url: /urls.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2016.com', port=80) at 0x7f280700f0e0>, 'Connection to www.zmyxl2016.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-02-01T17:20:50.494343",
+    "timestamp": "2026-02-01T18:29:44.872557",
     "success": false
   },
   "url2": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2008.com/cpm.txt",
-    "size": 0,
+    "hash": "8bec23e18cd239bb1cc0e62f3c5ce041",
+    "size": 3390,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-02-01T17:20:52.314669",
-    "success": false
+    "timestamp": "2026-02-01T18:29:49.266742",
+    "success": true
   },
   "url3": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2008.com/hmd_net.txt",
-    "size": 0,
+    "hash": "684f0be5be97ff8ff077dee3bc7ebeb6",
+    "size": 3390,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-02-01T17:20:53.111805",
-    "success": false
+    "timestamp": "2026-02-01T18:29:52.779395",
+    "success": true
   },
   "url4": {
-    "hash": "error: 403 Client Error: Forbidden for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/soft1.zip",
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Read timed out. (read timeout=30)",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-02-01T17:20:57.043639",
+    "timestamp": "2026-02-01T18:30:47.127167",
     "success": false
   },
   "url5": {
-    "hash": "error: 403 Client Error: Forbidden for url: https://www.jfglzs.com/c1.html",
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /c1.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.jfglzs.com', port=443) at 0x7f2806de5d10>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-02-01T17:20:57.764357",
+    "timestamp": "2026-02-01T18:31:17.455360",
     "success": false
   }
 }
