@@ -1,42 +1,42 @@
 {
   "url1": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2016.com/urls.txt",
-    "size": 0,
+    "hash": "28b9b39cbf80c1991ea116f843c2a7e5",
+    "size": 3390,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-02-01T23:20:39.733417",
-    "success": false
+    "timestamp": "2026-02-02T01:52:06.333065",
+    "success": true
   },
   "url2": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2008.com/cpm.txt",
-    "size": 0,
+    "hash": "d2cf4ec4a375eb60945786feaa554f5a",
+    "size": 3390,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-02-01T23:20:41.500575",
-    "success": false
+    "timestamp": "2026-02-02T01:52:09.384507",
+    "success": true
   },
   "url3": {
-    "hash": "error: 403 Client Error: Forbidden for url: http://www.zmyxl2008.com/hmd_net.txt",
-    "size": 0,
+    "hash": "1f5936006f2ef85f8358936d6518758d",
+    "size": 3390,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-02-01T23:20:42.299784",
-    "success": false
+    "timestamp": "2026-02-02T01:52:11.581563",
+    "success": true
   },
   "url4": {
-    "hash": "error: 403 Client Error: Forbidden for url: https://www-x-jfglzs-x-com.img.addlink.cn/software/soft1.zip",
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Read timed out. (read timeout=30)",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-02-01T23:20:46.445078",
+    "timestamp": "2026-02-02T01:52:52.778394",
     "success": false
   },
   "url5": {
-    "hash": "error: 403 Client Error: Forbidden for url: https://www.jfglzs.com/c1.html",
-    "size": 0,
+    "hash": "23062cc79c27cc326044e9ac7d19c8c2",
+    "size": 3384,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-02-01T23:20:47.466975",
-    "success": false
+    "timestamp": "2026-02-02T01:53:22.144768",
+    "success": true
   }
 }
