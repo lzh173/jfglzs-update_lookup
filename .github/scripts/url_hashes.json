@@ -1,34 +1,34 @@
 {
   "url1": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2016.com', port=80): Max retries exceeded with url: /urls.txt (Caused by NameResolutionError(\"HTTPConnection(host='www.zmyxl2016.com', port=80): Failed to resolve 'www.zmyxl2016.com' ([Errno -2] Name or service not known)\"))",
-    "size": 0,
+    "hash": "841b002e1513e4e7b8d925a328a6d4a3",
+    "size": 1779,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-02-02T07:45:32.933016",
-    "success": false
+    "timestamp": "2026-02-02T08:37:46.455569",
+    "success": true
   },
   "url2": {
-    "hash": "error: 511 Server Error:  for url: http://www.zmyxl2008.com/cpm.txt",
-    "size": 0,
+    "hash": "74853d266ab3dd1e51fa754e17f3a81b",
+    "size": 86,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-02-02T07:45:33.953701",
-    "success": false
+    "timestamp": "2026-02-02T08:37:47.178344",
+    "success": true
   },
   "url3": {
-    "hash": "error: 511 Server Error:  for url: http://www.zmyxl2008.com/hmd_net.txt",
-    "size": 0,
+    "hash": "a732b4dccc8aaa632575923261c16c86",
+    "size": 1039,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-02-02T07:45:34.717764",
-    "success": false
+    "timestamp": "2026-02-02T08:37:47.991656",
+    "success": true
   },
   "url4": {
     "hash": "error: 418 Client Error: Unknown Status for url: http://www.jfglzs.com/software/soft1.zip",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-02-02T07:45:35.652767",
+    "timestamp": "2026-02-02T08:37:48.825079",
     "success": false
   },
   "url5": {
@@ -36,7 +36,7 @@
     "size": 0,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-02-02T07:45:35.731675",
+    "timestamp": "2026-02-02T08:37:48.853068",
     "success": false
   }
 }
