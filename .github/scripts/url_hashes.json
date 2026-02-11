@@ -4,39 +4,39 @@
     "size": 1796,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-02-11T13:00:44.726386",
+    "timestamp": "2026-02-11T14:48:56.574423",
     "success": true
   },
   "url2": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /cpm.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7fc6486d5a90>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
-    "size": 0,
+    "hash": "74853d266ab3dd1e51fa754e17f3a81b",
+    "size": 86,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-02-11T13:01:15.397587",
-    "success": false
+    "timestamp": "2026-02-11T14:48:57.304835",
+    "success": true
   },
   "url3": {
     "hash": "091d210bfbf19f07b6a5c7bbaffe1429",
     "size": 1056,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-02-11T13:01:35.380732",
+    "timestamp": "2026-02-11T14:48:57.964059",
     "success": true
   },
   "url4": {
-    "hash": "error: HTTPConnectionPool(host='www.jfglzs.com', port=80): Max retries exceeded with url: /software/soft1.zip (Caused by ConnectTimeoutError(<HTTPConnection(host='www.jfglzs.com', port=80) at 0x7fc6486f5ba0>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
+    "hash": "error: 404 Client Error: Not Found for url: https://www.jfglzs.com/software/soft1.zip",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-02-11T13:02:05.733597",
+    "timestamp": "2026-02-11T14:48:59.280160",
     "success": false
   },
   "url5": {
-    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Read timed out. (read timeout=30)",
-    "size": 0,
+    "hash": "b67de3e9c75dff2d86da7f55eed3eec4",
+    "size": 13103,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-02-11T13:02:40.205639",
-    "success": false
+    "timestamp": "2026-02-11T14:48:59.902193",
+    "success": true
   }
 }
