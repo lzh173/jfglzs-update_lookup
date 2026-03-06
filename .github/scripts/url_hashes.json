@@ -4,7 +4,7 @@
     "size": 1819,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-03-06T13:52:08.920209",
+    "timestamp": "2026-03-06T14:34:07.971833",
     "success": true
   },
   "url2": {
@@ -12,23 +12,23 @@
     "size": 86,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-03-06T13:52:09.691844",
+    "timestamp": "2026-03-06T14:34:21.347853",
     "success": true
   },
   "url3": {
-    "hash": "e1b81e26e78ef6e79579a31de495d300",
-    "size": 1079,
+    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /hmd_net.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7f261bfad590>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
+    "size": 0,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-03-06T13:52:10.412901",
-    "success": true
+    "timestamp": "2026-03-06T14:34:51.690231",
+    "success": false
   },
   "url4": {
-    "hash": "error: 404 Client Error: Not Found for url: https://www.jfglzs.com/software/soft1.zip",
+    "hash": "error: HTTPConnectionPool(host='www.jfglzs.com', port=80): Max retries exceeded with url: /software/soft1.zip (Caused by ConnectTimeoutError(<HTTPConnection(host='www.jfglzs.com', port=80) at 0x7f261bfc0fc0>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-03-06T13:52:11.816040",
+    "timestamp": "2026-03-06T14:35:21.846936",
     "success": false
   },
   "url5": {
@@ -36,7 +36,7 @@
     "size": 13103,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-03-06T13:52:12.502854",
+    "timestamp": "2026-03-06T14:35:39.289584",
     "success": true
   }
 }
