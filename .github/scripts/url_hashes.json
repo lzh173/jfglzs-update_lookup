@@ -4,39 +4,39 @@
     "size": 1819,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-03-11T14:03:38.998033",
+    "timestamp": "2026-03-11T15:43:07.894026",
     "success": true
   },
   "url2": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /cpm.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7fb0fbe19950>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
+    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /cpm.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7f901b97da90>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-03-11T14:04:09.373129",
+    "timestamp": "2026-03-11T15:43:38.186304",
     "success": false
   },
   "url3": {
-    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /hmd_net.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7fb0fbe19a90>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
+    "hash": "error: HTTPConnectionPool(host='www.zmyxl2008.com', port=80): Max retries exceeded with url: /hmd_net.txt (Caused by ConnectTimeoutError(<HTTPConnection(host='www.zmyxl2008.com', port=80) at 0x7f901b97dbd0>, 'Connection to www.zmyxl2008.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-03-11T14:04:43.208551",
+    "timestamp": "2026-03-11T15:44:08.571140",
     "success": false
   },
   "url4": {
-    "hash": "error: HTTPConnectionPool(host='www.jfglzs.com', port=80): Max retries exceeded with url: /software/soft1.zip (Caused by ConnectTimeoutError(<HTTPConnection(host='www.jfglzs.com', port=80) at 0x7fb0fbe2d6e0>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /software/soft1.zip (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.jfglzs.com', port=443) at 0x7f901b8b6a50>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-03-11T14:05:13.563577",
+    "timestamp": "2026-03-11T15:44:46.171211",
     "success": false
   },
   "url5": {
-    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /c1.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.jfglzs.com', port=443) at 0x7fb0fbd52ba0>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /c1.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.jfglzs.com', port=443) at 0x7f901b97e990>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-03-11T14:05:43.647185",
+    "timestamp": "2026-03-11T15:45:16.273161",
     "success": false
   }
 }
