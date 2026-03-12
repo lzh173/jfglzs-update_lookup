@@ -4,7 +4,7 @@
     "size": 1819,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-03-12T11:28:45.148884",
+    "timestamp": "2026-03-12T12:52:11.148269",
     "success": true
   },
   "url2": {
@@ -12,7 +12,7 @@
     "size": 86,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-03-12T11:28:45.934674",
+    "timestamp": "2026-03-12T12:52:13.959160",
     "success": true
   },
   "url3": {
@@ -20,23 +20,23 @@
     "size": 1079,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-03-12T11:28:46.744510",
+    "timestamp": "2026-03-12T12:52:35.657468",
     "success": true
   },
   "url4": {
-    "hash": "error: 404 Client Error: Not Found for url: http://www.jfglzs.com/software/soft1.zip",
+    "hash": "error: HTTPConnectionPool(host='www.jfglzs.com', port=80): Max retries exceeded with url: /software/soft1.zip (Caused by ConnectTimeoutError(<HTTPConnection(host='www.jfglzs.com', port=80) at 0x7f8c7ca14e90>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-03-12T11:28:47.326609",
+    "timestamp": "2026-03-12T12:53:05.949832",
     "success": false
   },
   "url5": {
-    "hash": "2d8bebc2e1741390bc3714a13be1a56b",
-    "size": 13103,
+    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /c1.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.jfglzs.com', port=443) at 0x7f8c7c93b230>, 'Connection to www.jfglzs.com timed out. (connect timeout=30)'))",
+    "size": 0,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-03-12T11:28:48.084606",
-    "success": true
+    "timestamp": "2026-03-12T12:53:36.138213",
+    "success": false
   }
 }
