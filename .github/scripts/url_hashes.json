@@ -4,39 +4,39 @@
     "size": 0,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-09-16T13:02:14.756780",
+    "timestamp": "2026-09-16T17:55:03.101684",
     "success": false
   },
   "url2": {
-    "hash": "error: 456 Client Error:  for url: http://www.zmyxl2008.com/cpm.txt",
-    "size": 0,
+    "hash": "f32f6262fd64f58d0571f8256147d5a1",
+    "size": 223,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-09-16T13:02:15.811578",
-    "success": false
+    "timestamp": "2026-09-16T17:55:03.391631",
+    "success": true
   },
   "url3": {
     "hash": "error: 456 Client Error:  for url: http://www.zmyxl2008.com/hmd_net.txt",
     "size": 0,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-09-16T13:02:16.156630",
+    "timestamp": "2026-09-16T17:55:03.426847",
     "success": false
   },
   "url4": {
-    "hash": "error: 456 Client Error:  for url: http://www.jfglzs.com/software/soft1.zip",
-    "size": 0,
+    "hash": "f4b110222e259e69b0d0d408c34ac0ca",
+    "size": 223,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-09-16T13:02:16.526493",
-    "success": false
+    "timestamp": "2026-09-16T17:55:03.834614",
+    "success": true
   },
   "url5": {
     "hash": "error: 456 Client Error:  for url: https://www.jfglzs.com/c1.html",
     "size": 0,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-09-16T13:02:16.684698",
+    "timestamp": "2026-09-16T17:55:03.992593",
     "success": false
   }
 }
