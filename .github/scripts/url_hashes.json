@@ -1,42 +1,42 @@
 {
   "url1": {
-    "hash": "error: 456 Client Error:  for url: http://www.zmyxl2016.com/urls.txt",
-    "size": 0,
+    "hash": "2af07b340f14a8619e75f2b78eebaea9",
+    "size": 2172,
     "url": "http://www.zmyxl2016.com/urls.txt",
     "name": "\u5c4f\u853d\u7f51\u5740\u5217\u8868",
-    "timestamp": "2026-10-14T00:05:00.945989",
-    "success": false
+    "timestamp": "2026-10-14T05:44:07.898335",
+    "success": true
   },
   "url2": {
-    "hash": "error: 456 Client Error:  for url: http://www.zmyxl2008.com/cpm.txt",
-    "size": 0,
+    "hash": "720af30fd80ab599fb8b17640b8339a5",
+    "size": 110,
     "url": "http://www.zmyxl2008.com/cpm.txt",
     "name": "\u5c4f\u853d\u7a0b\u5e8f\u7279\u5f81\u8868",
-    "timestamp": "2026-10-14T00:05:01.465191",
-    "success": false
+    "timestamp": "2026-10-14T05:44:08.744366",
+    "success": true
   },
   "url3": {
-    "hash": "error: 456 Client Error:  for url: http://www.zmyxl2008.com/hmd_net.txt",
-    "size": 0,
+    "hash": "75969e07d2ceb989b5d6c643f3d0c480",
+    "size": 1969,
     "url": "http://www.zmyxl2008.com/hmd_net.txt",
     "name": "12.0\u4e91\u63a7\u4e0b\u53d1",
-    "timestamp": "2026-10-14T00:05:01.618588",
-    "success": false
+    "timestamp": "2026-10-14T05:44:09.516050",
+    "success": true
   },
   "url4": {
-    "hash": "error: 456 Client Error:  for url: http://www.jfglzs.com/software/soft1.zip",
+    "hash": "error: 404 Client Error: Not Found for url: https://www.jfglzs.com/software/soft1.zip",
     "size": 0,
     "url": "http://www.jfglzs.com/software/soft1.zip",
     "name": "\u52a9\u624b\u5b89\u88c5\u6587\u4ef6",
-    "timestamp": "2026-10-14T00:05:02.132599",
+    "timestamp": "2026-10-14T05:44:14.089288",
     "success": false
   },
   "url5": {
-    "hash": "error: HTTPSConnectionPool(host='www.jfglzs.com', port=443): Max retries exceeded with url: /c1.html (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)')))",
-    "size": 0,
+    "hash": "d03376fd6f8e8476477531f1b8036840",
+    "size": 13997,
     "url": "https://www.jfglzs.com/c1.html",
     "name": "\u52a9\u624b\u53d1\u5e03\u9875",
-    "timestamp": "2026-10-14T00:05:02.264093",
-    "success": false
+    "timestamp": "2026-10-14T05:44:15.329846",
+    "success": true
   }
 }
